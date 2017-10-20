@@ -133,6 +133,13 @@ class OTASerializationTest extends \PHPUnit_Framework_TestCase
      */
     public function testConversion($xml, $xsd, $class)
     {
+        if (! class_exists('XMLDiff\\Memory')) {
+            $this->markTestSkipped(
+                'Cannot run test, XMLDiff\\Memory is not available.'
+            );
+
+            return;
+        }
 
         $serializer = self::$generator->buildSerializer(function (HandlerRegistryInterface $h) {
             $h->registerSubscribingHandler(new XmlSchemaDateHandler());
