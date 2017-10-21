@@ -22,9 +22,6 @@
 		"symfony/dependency-injection": "^2.2|^3.0",
 		"symfony/config": "^2.2|^3.0",
 		"symfony/yaml": "^2.1|^3.0",
-
-		"goetas-webservices/xsd-reader": "^0.2",
-		"goetas-webservices/soap-reader": "^0.3",
 		"doctrine/inflector": "^1.0",
 		"zendframework/zend-code": "~2.3",
 
@@ -33,8 +30,25 @@
 	"require-dev": {
 		"phpunit/phpunit": "^4.8|^5.0",
 		"jms/serializer": "^1.3",
-		"goetas-webservices/xsd2php-runtime": "^0.2.7"
+		"goetas-webservices/xsd2php-runtime": "^0.2.7",
+		"goetas-webservices/xsd-reader": "dev-static-analysis",
+		"goetas-webservices/soap-reader": "dev-static-analysis-integration",
+		"goetas-webservices/wsdl-reader": "dev-static-analysis-integration"
 	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/SignpostMarv/xsd-reader.git"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/SignpostMarv/soap-reader.git"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/SignpostMarv/wsdl-reader.git"
+		}
+	],
 	"autoload": {
 		"psr-4": {
 			"GoetasWebservices\\Xsd\\XsdToPhp\\": "src/"
