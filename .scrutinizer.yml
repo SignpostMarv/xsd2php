@@ -1,8 +1,5 @@
 build:
     nodes:
-        php55:
-            environment:
-                php: 5.5
         php56:
             environment:
                 php: 5.6
