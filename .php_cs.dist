@@ -1,0 +1,15 @@
+<?php
+/**
+ * PHP-CS-Fixer Config.
+ */
+
+namespace GoetasWebservices\CS;
+
+require_once __DIR__.'/vendor/autoload.php';
+
+return new Config([
+    __FILE__,
+    (__DIR__.'/bin/xsd2php'),
+    (__DIR__.'/src/'),
+    (__DIR__.'/tests/'),
+]);

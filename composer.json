@@ -21,9 +21,19 @@
   },
   "scripts": {
     "tests": [
-      "php ./vendor/phpunit/phpunit/phpunit -v"
+      "php ./vendor/phpunit/phpunit/phpunit -v",
+      "phpstan analyse -l7 ./src ./tests ./bin/xsd2php",
+      "psalm",
+      "phpcpd ./src/ ./tests/ ./bin/xsd2php",
+      "php ./vendor/friendsofphp/php-cs-fixer/php-cs-fixer fix --verbose --dry-run"
     ]
   },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/SignpostMarv/xsd-php-cs-fixer-config.git"
+    }
+  ],
   "require": {
     "php": "^5.5|^7.0",
     "doctrine/inflector": "^1.0",
@@ -37,9 +47,10 @@
     "zendframework/zend-code": "~2.3"
   },
   "require-dev": {
-    "phpunit/phpunit": "^4.8|^5.0",
+    "goetas-webservices/xsd-php-cs-fixer-config": "^0.1.1",
+    "goetas-webservices/xsd2php-runtime": "^0.2.7",
     "jms/serializer": "^1.3",
-    "goetas-webservices/xsd2php-runtime": "^0.2.7"
+    "phpunit/phpunit": "^4.8|^5.0"
   },
   "autoload": {
     "psr-4": {
