@@ -1,9 +1,9 @@
 <?php
+
 namespace GoetasWebservices\Xsd\XsdToPhp\Tests\Converter\PHP;
 
 class Xsd2PhpElementTest extends Xsd2PhpBase
 {
-
     /**
      * @dataProvider getPrimitiveTypeConversions
      */
@@ -11,7 +11,7 @@ class Xsd2PhpElementTest extends Xsd2PhpBase
     {
         $content = '
              <xs:schema targetNamespace="http://www.example.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-                <xs:element name="element-one" type="' . $xsType . '">
+                <xs:element name="element-one" type="'.$xsType.'">
 
                 </xs:element>
                </xs:schema>
@@ -46,7 +46,7 @@ class Xsd2PhpElementTest extends Xsd2PhpBase
              <xs:schema targetNamespace="http://www.example.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
                 <xs:element name="element-one">
                     <xs:simpleType>
-                         <xs:restriction base="' . $xsType . '">
+                         <xs:restriction base="'.$xsType.'">
                          </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
@@ -81,7 +81,7 @@ class Xsd2PhpElementTest extends Xsd2PhpBase
     {
         $content = '
              <xs:schema targetNamespace="http://www.example.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-                <xs:element name="element-one" type="' . $xsType . '">
+                <xs:element name="element-one" type="'.$xsType.'">
                 </xs:element>
                </xs:schema>
             ';
@@ -110,7 +110,7 @@ class Xsd2PhpElementTest extends Xsd2PhpBase
              <xs:schema targetNamespace="http://www.example.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
                 <xs:element name="element-one">
                     <xs:simpleType>
-                         <xs:restriction base="' . $xsType . '">
+                         <xs:restriction base="'.$xsType.'">
                          </xs:restriction>
                     </xs:simpleType>
                 </xs:element>

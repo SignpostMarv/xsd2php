@@ -1,4 +1,5 @@
 <?php
+
 namespace GoetasWebservices\Xsd\XsdToPhp\Tests\Issues\I84;
 
 use GoetasWebservices\Xsd\XsdToPhp\Naming\ShortNamingStrategy;
@@ -7,11 +8,10 @@ use GoetasWebservices\XML\XSDReader\SchemaReader;
 
 class I84Test extends \PHPUnit_Framework_TestCase
 {
-
     public function testNaming()
     {
         $reader = new SchemaReader();
-        $schema = $reader->readFile(__DIR__ . '/data.xsd');
+        $schema = $reader->readFile(__DIR__.'/data.xsd');
 
         $phpConv = new PhpConverter(new ShortNamingStrategy());
         $phpConv->addNamespace('http://www.example.com/', 'Epa');

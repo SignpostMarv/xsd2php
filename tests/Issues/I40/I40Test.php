@@ -1,4 +1,5 @@
 <?php
+
 namespace GoetasWebservices\Xsd\XsdToPhp\Tests\Issues\I40;
 
 use GoetasWebservices\Xsd\XsdToPhp\Jms\YamlConverter;
@@ -10,10 +11,8 @@ use GoetasWebservices\XML\XSDReader\SchemaReader;
 
 class I40Test extends \PHPUnit_Framework_TestCase
 {
-
     public function testMissingClass()
     {
-
         $expectedItems = array(
             'Epa\\Schema\\AdditionalIdentifier',
             'Epa\\Schema\\AdditionalIdentifierType',
@@ -23,7 +22,7 @@ class I40Test extends \PHPUnit_Framework_TestCase
         $expectedItems = array_combine($expectedItems, $expectedItems);
 
         $reader = new SchemaReader();
-        $schema = $reader->readFile(__DIR__ . '/data.xsd');
+        $schema = $reader->readFile(__DIR__.'/data.xsd');
 
         $yamlConv = new YamlConverter(new ShortNamingStrategy());
         $yamlConv->addNamespace('', 'Epa\\Schema');

@@ -1,4 +1,5 @@
 <?php
+
 namespace GoetasWebservices\Xsd\XsdToPhp\Tests\PHP;
 
 use GoetasWebservices\Xsd\XsdToPhp\Jms\YamlConverter;
@@ -9,10 +10,9 @@ use GoetasWebservices\XML\XSDReader\SchemaReader;
 
 class AnyTypePHPConversionTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
-     *
      * @param mixed $xml
+     *
      * @return array[]
      */
     protected function getYamlFiles($xml, array $types = array())
@@ -29,7 +29,7 @@ class AnyTypePHPConversionTest extends \PHPUnit_Framework_TestCase
 
         if (!is_array($xml)) {
             $xml = [
-                'schema.xsd' => $xml
+                'schema.xsd' => $xml,
             ];
         }
         $schemas = [];
@@ -42,8 +42,8 @@ class AnyTypePHPConversionTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     *
      * @param mixed $xml
+     *
      * @return \Zend\Code\Generator\ClassGenerator[]
      */
     protected function getPhpClasses($xml, array $types = array())
@@ -61,7 +61,7 @@ class AnyTypePHPConversionTest extends \PHPUnit_Framework_TestCase
 
         if (!is_array($xml)) {
             $xml = [
-                'schema.xsd' => $xml
+                'schema.xsd' => $xml,
             ];
         }
         $schemas = [];
@@ -76,6 +76,7 @@ class AnyTypePHPConversionTest extends \PHPUnit_Framework_TestCase
                 $classes[$k] = $codegen;
             }
         }
+
         return $classes;
     }
 
@@ -91,9 +92,8 @@ class AnyTypePHPConversionTest extends \PHPUnit_Framework_TestCase
             </xs:schema>';
 
         $items = $this->getPhpClasses($xml, array(
-            ['http://www.w3.org/2001/XMLSchema', 'anyType', 'mixed']
+            ['http://www.w3.org/2001/XMLSchema', 'anyType', 'mixed'],
         ));
-
 
         $this->assertCount(1, $items);
 
@@ -120,9 +120,8 @@ class AnyTypePHPConversionTest extends \PHPUnit_Framework_TestCase
             </xs:schema>';
 
         $items = $this->getYamlFiles($xml, array(
-            ['http://www.w3.org/2001/XMLSchema', 'anyType', 'My\Custom\MixedTypeHandler']
+            ['http://www.w3.org/2001/XMLSchema', 'anyType', 'My\Custom\MixedTypeHandler'],
         ));
-
 
         $this->assertCount(1, $items);
 
@@ -137,12 +136,12 @@ class AnyTypePHPConversionTest extends \PHPUnit_Framework_TestCase
                         'serialized_name' => 'id',
                         'accessor' => array(
                             'getter' => 'getId',
-                            'setter' => 'setId'
+                            'setter' => 'setId',
                         ),
-                        'type' => 'My\\Custom\\MixedTypeHandler'
-                    )
-                )
-            )
+                        'type' => 'My\\Custom\\MixedTypeHandler',
+                    ),
+                ),
+            ),
         ), $single);
     }
 }

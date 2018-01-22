@@ -1,4 +1,5 @@
 <?php
+
 namespace GoetasWebservices\Xsd\XsdToPhp\Tests;
 
 use Composer\Autoload\ClassLoader;
@@ -38,7 +39,7 @@ abstract class AbstractGenerator
 
         $this->loader = new ClassLoader();
         foreach ($this->targetNs as $phpNs) {
-            $this->loader->addPsr4($phpNs . "\\", $this->phpDir . "/" . $this->slug($phpNs));
+            $this->loader->addPsr4($phpNs.'\\', $this->phpDir.'/'.$this->slug($phpNs));
         }
     }
 
@@ -48,6 +49,7 @@ abstract class AbstractGenerator
         foreach ($files as $file) {
             (is_dir("$dir/$file")) ? self::delTree("$dir/$file") : unlink("$dir/$file");
         }
+
         return rmdir($dir);
     }
 
@@ -69,8 +71,8 @@ abstract class AbstractGenerator
     public function cleanDirectories()
     {
         foreach ($this->targetNs as $phpNs) {
-            $phpDir = $this->phpDir . "/" . $this->slug($phpNs);
-            $jmsDir = $this->jmsDir . "/" . $this->slug($phpNs);
+            $phpDir = $this->phpDir.'/'.$this->slug($phpNs);
+            $jmsDir = $this->jmsDir.'/'.$this->slug($phpNs);
 
             foreach ([$phpDir, $jmsDir] as $dir) {
                 if (is_dir($dir)) {
@@ -94,11 +96,11 @@ abstract class AbstractGenerator
         });
 
         foreach ($this->targetNs as $phpNs) {
-            $metadataDirs[$phpNs] = $this->jmsDir . "/" . $this->slug($phpNs);
+            $metadataDirs[$phpNs] = $this->jmsDir.'/'.$this->slug($phpNs);
         }
 
         foreach ($metadataDirs as $php => $dir) {
-            if (!is_dir($dir)){
+            if (!is_dir($dir)) {
                 mkdir($dir, 0777, true);
             }
             $serializerBuilder->addMetadataDir($dir, $php);
@@ -110,6 +112,7 @@ abstract class AbstractGenerator
     public function registerAutoloader()
     {
         $this->loader->register();
+
         return $this->loader;
     }
 
@@ -125,7 +128,7 @@ abstract class AbstractGenerator
     {
         $paths = array();
         foreach ($this->targetNs as $phpNs) {
-            $paths[$phpNs . "\\"] = $this->phpDir . "/" . $this->slug($phpNs);
+            $paths[$phpNs.'\\'] = $this->phpDir.'/'.$this->slug($phpNs);
         }
 
         $pathGenerator = new PhpPsr4PathGenerator($paths);
@@ -142,7 +145,7 @@ abstract class AbstractGenerator
     {
         $paths = array();
         foreach ($this->targetNs as $phpNs) {
-            $paths[$phpNs . "\\"] = $this->jmsDir . "/" . $this->slug($phpNs);
+            $paths[$phpNs.'\\'] = $this->jmsDir.'/'.$this->slug($phpNs);
         }
 
         $pathGenerator = new JmsPsr4PathGenerator($paths);

@@ -1,4 +1,5 @@
 <?php
+
 namespace GoetasWebservices\Xsd\XsdToPhp\Command;
 
 use Symfony\Component\Config\FileLocator;
@@ -26,13 +27,12 @@ class Convert extends Command
     }
 
     /**
-     *
      * @see Console\Command\Command
      */
     protected function configure()
     {
         $this->setName('convert');
-        $this->setDescription("Convert a XSD file into PHP classes and JMS serializer metadata files");
+        $this->setDescription('Convert a XSD file into PHP classes and JMS serializer metadata files');
         $this->setDefinition(array(
             new InputArgument('config', InputArgument::REQUIRED, 'Where is located your XSD definitions'),
             new InputArgument('src', InputArgument::REQUIRED | InputArgument::IS_ARRAY, 'Where is located your XSD definitions'),
@@ -40,7 +40,6 @@ class Convert extends Command
     }
 
     /**
-     *
      * @see Console\Command\Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -55,12 +54,13 @@ class Convert extends Command
         }
 
         foreach (['php', 'jms'] as $type) {
-            $converter = $this->container->get('goetas_webservices.xsd2php.converter.' . $type);
+            $converter = $this->container->get('goetas_webservices.xsd2php.converter.'.$type);
             $items = $converter->convert($schemas);
 
-            $writer = $this->container->get('goetas_webservices.xsd2php.writer.' . $type);
+            $writer = $this->container->get('goetas_webservices.xsd2php.writer.'.$type);
             $writer->write($items);
         }
+
         return count($items) ? 0 : 255;
     }
 
@@ -74,6 +74,5 @@ class Convert extends Command
         $delegatingLoader->load($configFile);
 
         $this->container->compile();
-
     }
 }

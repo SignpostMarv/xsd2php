@@ -1,8 +1,8 @@
 #!/usr/bin/env php
 <?php
 $paths = [
-    __DIR__ . '/../../../autoload.php',
-    __DIR__ . '/../vendor/autoload.php'
+    __DIR__.'/../../../autoload.php',
+    __DIR__.'/../vendor/autoload.php',
 ];
 foreach ($paths as $path) {
     if (is_file($path)) {
@@ -20,7 +20,7 @@ $container->registerExtension(new \GoetasWebservices\Xsd\XsdToPhp\DependencyInje
 $output = new \Symfony\Component\Console\Output\ConsoleOutput();
 $container->set('logger', new \Symfony\Component\Console\Logger\ConsoleLogger($output));
 error_reporting(error_reporting() & ~E_NOTICE);
-$cli = new Application('Convert XSD to PHP classes Command Line Interface', "2.0");
+$cli = new Application('Convert XSD to PHP classes Command Line Interface', '2.0');
 $cli->setCatchExceptions(true);
 $cli->add(new Convert($container));
 $cli->run(null, $output);

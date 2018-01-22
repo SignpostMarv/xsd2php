@@ -1,4 +1,5 @@
 <?php
+
 namespace GoetasWebservices\Xsd\XsdToPhp\Tests\PathGenerator;
 
 use GoetasWebservices\Xsd\XsdToPhp\Jms\PathGenerator\Psr4PathGenerator;
@@ -11,8 +12,8 @@ class JMSPathGeneratorTest extends \PHPUnit_Framework_TestCase
     {
         $tmp = sys_get_temp_dir();
 
-        if (is_writable("/dev/shm")) {
-            $tmp = "/dev/shm";
+        if (is_writable('/dev/shm')) {
+            $tmp = '/dev/shm';
         }
 
         $this->tmpdir = "$tmp/PathGeneratorTest";
@@ -25,7 +26,7 @@ class JMSPathGeneratorTest extends \PHPUnit_Framework_TestCase
     {
         $this->setExpectedException('GoetasWebservices\Xsd\XsdToPhp\PathGenerator\PathGeneratorException');
         $generator = new Psr4PathGenerator(array(
-            'myns2\\' => $this->tmpdir
+            'myns2\\' => $this->tmpdir,
         ));
         $generator->getPath(array('myns\Bar' => true));
     }
@@ -33,21 +34,21 @@ class JMSPathGeneratorTest extends \PHPUnit_Framework_TestCase
     public function testWriterLong()
     {
         $generator = new Psr4PathGenerator(array(
-            'myns\\' => $this->tmpdir
+            'myns\\' => $this->tmpdir,
         ));
 
         $path = $generator->getPath(array('myns\foo\Bar' => true));
-        $this->assertEquals($path, $this->tmpdir . "/foo.Bar.yml");
+        $this->assertEquals($path, $this->tmpdir.'/foo.Bar.yml');
     }
 
     public function testWriter()
     {
         $generator = new Psr4PathGenerator(array(
-            'myns\\' => $this->tmpdir
+            'myns\\' => $this->tmpdir,
         ));
 
         $path = $generator->getPath(array('myns\Bar' => true));
 
-        $this->assertEquals($path, $this->tmpdir . "/Bar.yml");
+        $this->assertEquals($path, $this->tmpdir.'/Bar.yml');
     }
 }

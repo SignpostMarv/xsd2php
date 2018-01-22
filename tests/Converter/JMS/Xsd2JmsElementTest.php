@@ -1,9 +1,9 @@
 <?php
+
 namespace GoetasWebservices\Xsd\XsdToPhp\Tests\Converter\JMS;
 
 class Xsd2JmsElementTest extends Xsd2JmsBase
 {
-
     /**
      * @dataProvider getPrimitiveTypeConversions
      */
@@ -11,7 +11,7 @@ class Xsd2JmsElementTest extends Xsd2JmsBase
     {
         $xml = '
              <xs:schema targetNamespace="http://www.example.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-                <xs:element name="element-one" type="' . $xsType . '">
+                <xs:element name="element-one" type="'.$xsType.'">
 
                 </xs:element>
                </xs:schema>
@@ -31,12 +31,12 @@ class Xsd2JmsElementTest extends Xsd2JmsBase
                             'access_type' => 'public_method',
                             'accessor' => array(
                                 'getter' => 'value',
-                                'setter' => 'value'
+                                'setter' => 'value',
                             ),
-                            'type' => $phpName
-                        )
-                    )
-                )
+                            'type' => $phpName,
+                        ),
+                    ),
+                ),
             ), $classes['Example\ElementOne']);
     }
 
@@ -49,7 +49,7 @@ class Xsd2JmsElementTest extends Xsd2JmsBase
              <xs:schema targetNamespace="http://www.example.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
                 <xs:element name="element-one">
                     <xs:simpleType>
-                         <xs:restriction base="' . $xsType . '">
+                         <xs:restriction base="'.$xsType.'">
                          </xs:restriction>
                     </xs:simpleType>
                 </xs:element>
@@ -71,12 +71,12 @@ class Xsd2JmsElementTest extends Xsd2JmsBase
                             'access_type' => 'public_method',
                             'accessor' => array(
                                 'getter' => 'value',
-                                'setter' => 'value'
+                                'setter' => 'value',
                             ),
-                            'type' => $phpName
-                        )
-                    )
-                )
+                            'type' => $phpName,
+                        ),
+                    ),
+                ),
             ), $classes['Example\ElementOne']);
     }
 
@@ -87,7 +87,7 @@ class Xsd2JmsElementTest extends Xsd2JmsBase
     {
         $xml = '
              <xs:schema targetNamespace="http://www.example.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-                <xs:element name="element-one" type="' . $xsType . '">
+                <xs:element name="element-one" type="'.$xsType.'">
                 </xs:element>
                </xs:schema>
             ';
@@ -110,7 +110,7 @@ class Xsd2JmsElementTest extends Xsd2JmsBase
                         ),
                         'type' => $jmsType,
                     ),
-                ))
+                ), ),
         ), $classes['Example\ElementOne']);
     }
 
@@ -123,7 +123,7 @@ class Xsd2JmsElementTest extends Xsd2JmsBase
              <xs:schema targetNamespace="http://www.example.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
                 <xs:element name="element-one">
                     <xs:simpleType>
-                         <xs:restriction base="' . $xsType . '"/>
+                         <xs:restriction base="'.$xsType.'"/>
                     </xs:simpleType>
                 </xs:element>
                </xs:schema>
@@ -148,10 +148,8 @@ class Xsd2JmsElementTest extends Xsd2JmsBase
                         'type' => $jmsType,
                     ),
                 ),
-
-            )
+            ),
         ), $classes['Example\ElementOne']);
-
     }
 
     public function testUnqualifiedNsQualifiedElement()
@@ -351,13 +349,13 @@ class Xsd2JmsElementTest extends Xsd2JmsBase
                                 'serialized_name' => 'ns.value',
                                 'accessor' => array(
                                     'getter' => 'getNsValue',
-                                    'setter' => 'setNsValue'
+                                    'setter' => 'setNsValue',
                                 ),
-                                'type' => 'string'
-                            )
-                        )
-                    )
-                )
+                                'type' => 'string',
+                            ),
+                        ),
+                    ),
+                ),
             ), $classes);
     }
 }

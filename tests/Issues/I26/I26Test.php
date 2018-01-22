@@ -24,5 +24,4 @@ class I26Test extends \PHPUnit_Framework_TestCase
         self::assertEquals(false, $required['xml_list']['skip_when_empty']);
         self::assertEquals(true, $optional['xml_list']['skip_when_empty']);
     }
-
 }

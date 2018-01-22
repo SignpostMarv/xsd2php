@@ -1,9 +1,9 @@
 <?php
+
 namespace GoetasWebservices\Xsd\XsdToPhp\Tests\Converter\JMS;
 
 class Xsd2JmsGroupTest extends Xsd2JmsBase
 {
-
     public function testGroupArray()
     {
         $content = '
@@ -101,10 +101,10 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                             'serialized_name' => 'att',
                             'accessor' => array(
                                 'getter' => 'getAtt',
-                                'setter' => 'setAtt'
+                                'setter' => 'setAtt',
                             ),
                             'xml_attribute' => true,
-                            'type' => 'string'
+                            'type' => 'string',
                         ),
                         'string1' => array(
                             'expose' => true,
@@ -117,9 +117,9 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                             */
                            'accessor' => array(
                                'getter' => 'getString1',
-                               'setter' => 'setString1'
+                               'setter' => 'setString1',
                            ),
-                           'type' => 'string'
+                           'type' => 'string',
                        ),
                        'string2' => array(
                            'expose' => true,
@@ -132,9 +132,9 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                            */
                             'accessor' => array(
                                 'getter' => 'getString2',
-                                'setter' => 'setString2'
+                                'setter' => 'setString2',
                             ),
-                            'type' => 'Example\\ComplexType1Type\\String2AType'
+                            'type' => 'Example\\ComplexType1Type\\String2AType',
                         ),
                         'string3' => array(
                             'expose' => true,
@@ -147,9 +147,9 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                             */
                             'accessor' => array(
                                 'getter' => 'getString3',
-                                'setter' => 'setString3'
+                                'setter' => 'setString3',
                             ),
-                            'type' => 'string'
+                            'type' => 'string',
                         ),
                         'string4' => array(
                             'expose' => true,
@@ -162,9 +162,9 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                             */
                             'accessor' => array(
                                 'getter' => 'getString4',
-                                'setter' => 'setString4'
+                                'setter' => 'setString4',
                             ),
-                            'type' => 'string'
+                            'type' => 'string',
                         ),
                         'string5' => array(
                             'expose' => true,
@@ -177,14 +177,13 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                             */
                             'accessor' => array(
                                 'getter' => 'getString5',
-                                'setter' => 'setString5'
+                                'setter' => 'setString5',
                             ),
-                            'type' => 'string'
+                            'type' => 'string',
                         ),
-                    )
-                )
+                    ),
+                ),
             ), $classes['Example\\ComplexType1Type']);
-
 
         $this->assertEquals(
             array(
@@ -201,12 +200,12 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                              */
                             'accessor' => array(
                                 'getter' => 'getString3',
-                                'setter' => 'setString3'
+                                'setter' => 'setString3',
                             ),
-                            'type' => 'string'
-                        )
-                    )
-                )
+                            'type' => 'string',
+                        ),
+                    ),
+                ),
             ), $classes['Example\\ComplexType1Type\\String2AType']);
     }
 
@@ -284,10 +283,10 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                             'serialized_name' => 'attribute-2',
                             'accessor' => array(
                                 'getter' => 'getAttribute2',
-                                'setter' => 'setAttribute2'
+                                'setter' => 'setAttribute2',
                             ),
                             'xml_attribute' => true,
-                            'type' => 'string'
+                            'type' => 'string',
                         ),
                         'complexType1El1' => array(
                             'expose' => true,
@@ -300,12 +299,12 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                              */
                             'accessor' => array(
                                 'getter' => 'getComplexType1El1',
-                                'setter' => 'setComplexType1El1'
+                                'setter' => 'setComplexType1El1',
                             ),
-                            'type' => 'string'
-                        )
-                    )
-                )
+                            'type' => 'string',
+                        ),
+                    ),
+                ),
             ), $classes['Example\\ComplexType1Type']);
 
         $this->assertEquals(
@@ -318,10 +317,10 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                             'serialized_name' => 'complexType-2-att1',
                             'accessor' => array(
                                 'getter' => 'getComplexType2Att1',
-                                'setter' => 'setComplexType2Att1'
+                                'setter' => 'setComplexType2Att1',
                             ),
                             'xml_attribute' => true,
-                            'type' => 'string'
+                            'type' => 'string',
                         ),
                         'complexType2El1' => array(
                             'expose' => true,
@@ -334,12 +333,12 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                              */
                             'accessor' => array(
                                 'getter' => 'getComplexType2El1',
-                                'setter' => 'setComplexType2El1'
+                                'setter' => 'setComplexType2El1',
                             ),
-                            'type' => 'string'
-                        )
-                    )
-                )
+                            'type' => 'string',
+                        ),
+                    ),
+                ),
             ), $classes['Example\\ComplexType2Type']);
     }
 
@@ -348,11 +347,11 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
         return [
             [
                 null,
-                false
+                false,
             ],
             [
                 '1',
-                false
+                false,
             ],
             /*
             ['2', true],
@@ -401,17 +400,17 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                              */
                             'accessor' => array(
                                 'getter' => 'getStrings',
-                                'setter' => 'setStrings'
+                                'setter' => 'setStrings',
                             ),
                             'type' => 'array<string>',
                             'xml_list' => array(
                                 'inline' => false,
                                 'entry_name' => 'string',
-                                'skip_when_empty' => false
-                            )
-                        )
-                    )
-                )
+                                'skip_when_empty' => false,
+                            ),
+                        ),
+                    ),
+                ),
             ), $classes['Example\\ComplexType1Type']);
     }
 
@@ -424,7 +423,7 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
              <xs:schema targetNamespace="http://www.example.com" xmlns:xs="http://www.w3.org/2001/XMLSchema">
                 <xs:complexType name="complexType-1">
                      <xs:sequence>
-                            <xs:element ' . ($max !== null ? (' maxOccurs="' . $max . '"') : "") . ' name="complexType-1-el-1" type="xs:string"/>
+                            <xs:element '.($max !== null ? (' maxOccurs="'.$max.'"') : '').' name="complexType-1-el-1" type="xs:string"/>
                      </xs:sequence>
                 </xs:complexType>
             </xs:schema>
@@ -447,12 +446,12 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                              */
                             'accessor' => array(
                                 'getter' => 'getComplexType1El1',
-                                'setter' => 'setComplexType1El1'
+                                'setter' => 'setComplexType1El1',
                             ),
-                            'type' => 'string'
-                        )
-                    )
-                )
+                            'type' => 'string',
+                        ),
+                    ),
+                ),
             ), $classes['Example\\ComplexType1Type']);
     }
 
@@ -514,10 +513,10 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                             'serialized_name' => 'attribute-1',
                             'accessor' => array(
                                 'getter' => 'getAttribute1',
-                                'setter' => 'setAttribute1'
+                                'setter' => 'setAttribute1',
                             ),
                             'xml_attribute' => true,
-                            'type' => 'string'
+                            'type' => 'string',
                         ),
                         'attribute2' => array(
                             'expose' => true,
@@ -525,10 +524,10 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                             'serialized_name' => 'attribute-2',
                             'accessor' => array(
                                 'getter' => 'getAttribute2',
-                                'setter' => 'setAttribute2'
+                                'setter' => 'setAttribute2',
                             ),
                             'xml_attribute' => true,
-                            'type' => 'string'
+                            'type' => 'string',
                         ),
                         'attributeGroup1Att1' => array(
                             'expose' => true,
@@ -536,10 +535,10 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                             'serialized_name' => 'attributeGroup-1-att-1',
                             'accessor' => array(
                                 'getter' => 'getAttributeGroup1Att1',
-                                'setter' => 'setAttributeGroup1Att1'
+                                'setter' => 'setAttributeGroup1Att1',
                             ),
                             'xml_attribute' => true,
-                            'type' => 'string'
+                            'type' => 'string',
                         ),
                         'attributeGroup2Att2' => array(
                             'expose' => true,
@@ -547,10 +546,10 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                             'serialized_name' => 'attributeGroup-2-att-2',
                             'accessor' => array(
                                 'getter' => 'getAttributeGroup2Att2',
-                                'setter' => 'setAttributeGroup2Att2'
+                                'setter' => 'setAttributeGroup2Att2',
                             ),
                             'xml_attribute' => true,
-                            'type' => 'string'
+                            'type' => 'string',
                         ),
                         'group1El1' => array(
                             'expose' => true,
@@ -561,9 +560,9 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
 //                            ),
                             'accessor' => array(
                                 'getter' => 'getGroup1El1',
-                                'setter' => 'setGroup1El1'
+                                'setter' => 'setGroup1El1',
                             ),
-                            'type' => 'string'
+                            'type' => 'string',
                         ),
                         'group2El1' => array(
                             'expose' => true,
@@ -574,9 +573,9 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
 //                            ),
                             'accessor' => array(
                                 'getter' => 'getGroup2El1',
-                                'setter' => 'setGroup2El1'
+                                'setter' => 'setGroup2El1',
                             ),
-                            'type' => 'string'
+                            'type' => 'string',
                         ),
                         'element1' => array(
                             'expose' => true,
@@ -587,9 +586,9 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
 //                            ),
                             'accessor' => array(
                                 'getter' => 'getElement1',
-                                'setter' => 'setElement1'
+                                'setter' => 'setElement1',
                             ),
-                            'type' => 'string'
+                            'type' => 'string',
                         ),
                         'complexType1El1' => array(
                             'expose' => true,
@@ -600,12 +599,12 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
 //                            ),
                             'accessor' => array(
                                 'getter' => 'getComplexType1El1',
-                                'setter' => 'setComplexType1El1'
+                                'setter' => 'setComplexType1El1',
                             ),
-                            'type' => 'string'
-                        )
-                    )
-                )
+                            'type' => 'string',
+                        ),
+                    ),
+                ),
             ), $classes['Example\\ComplexType1Type']);
         $this->assertEquals(
             array(
@@ -619,12 +618,12 @@ class Xsd2JmsGroupTest extends Xsd2JmsBase
                             'access_type' => 'public_method',
                             'accessor' => array(
                                 'getter' => 'value',
-                                'setter' => 'value'
+                                'setter' => 'value',
                             ),
-                            'type' => 'string'
-                        )
-                    )
-                )
+                            'type' => 'string',
+                        ),
+                    ),
+                ),
             ), $classes['Example\\Element1']);
     }
 }
