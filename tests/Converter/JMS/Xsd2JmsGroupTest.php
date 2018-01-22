@@ -1,7 +1,7 @@
 <?php
 namespace GoetasWebservices\Xsd\XsdToPhp\Tests\Converter\JMS;
 
-class Xsd2PhpGroupTest extends Xsd2JmsBase
+class Xsd2JmsGroupTest extends Xsd2JmsBase
 {
 
     public function testGroupArray()

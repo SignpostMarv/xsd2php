@@ -1,5 +1,5 @@
 <?php
-namespace GoetasWebservices\Xsd\XsdToPhp\Tests\Issues\I40;
+namespace GoetasWebservices\Xsd\XsdToPhp\Tests\Issues\I43;
 
 use GoetasWebservices\Xsd\XsdToPhp\Jms\YamlConverter;
 use GoetasWebservices\Xsd\XsdToPhp\Naming\ShortNamingStrategy;

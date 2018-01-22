@@ -1,5 +1,5 @@
 <?php
-namespace GoetasWebservices\Xsd\XsdToPhp\Tests\Php\PathGenerator;
+namespace GoetasWebservices\Xsd\XsdToPhp\Tests\PathGenerator;
 
 use GoetasWebservices\Xsd\XsdToPhp\Php\PathGenerator\Psr4PathGenerator;
 use GoetasWebservices\Xsd\XsdToPhp\Php\Structure\PHPClass;

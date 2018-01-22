@@ -8,7 +8,7 @@ class AbstractXsdConverterTest extends \PHPUnit_Framework_TestCase
 
     /**
      *
-     * @var AbstractConverter
+     * @var \GoetasWebservices\Xsd\XsdToPhp\AbstractConverter
      */
     protected $converter;
 
